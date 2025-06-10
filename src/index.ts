@@ -55,6 +55,14 @@ export class MyMCP extends McpAgent {
 				return { content: [{ type: "text", text: String(result) }] };
 			}
 		);
+
+		this.server.tool(
+			"Greet MCP Developer",
+			{ name: z.string()},
+			async ({ name }) => ({
+				content: [{ type: "text", text: String("Hello MCP developer " + name) }],
+			})
+		);
 	}
 }
 
